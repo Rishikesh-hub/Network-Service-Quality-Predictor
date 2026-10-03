@@ -1,0 +1,32 @@
+model:
+  name: "MLP / ANN Classifier"
+  artifact: "models/mlp_ann_final.pkl"
+  version: "mlp_ann_final"
+  type: "MLPClassifier"
+  architecture: [128, 64]
+  activation: "relu"
+  solver: "adam"
+  alpha: 0.001
+  learning_rate: 0.001
+  early_stopping: true
+  random_state: 42
+  threshold: 0.80
+  prediction_type: "current_state"
+  label_mapping:
+    0: "NORMAL"
+    1: "DEGRADED"
+
+evaluation:
+  threshold: 0.80
+  validation:
+    threshold: 0.80
+    f1: 0.9511
+    far: 0.010488
+    precision: 0.931389
+    recall: 0.971602
+  test:
+    threshold: 0.80
+    f1: 0.9648
+    far: 0.011805
+    f1_default_050: 0.9596
+    far_default_050: 0.019165

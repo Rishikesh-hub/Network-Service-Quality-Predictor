@@ -1,0 +1,89 @@
+{
+  "source_files": [
+    "dataset_01_TC33_27062025_labeled dataset4.csv",
+    "dataset_02_TC33_02072025_labeled dataset 3.csv",
+    "wue_tput_all_Throughput dataset 2.csv",
+    "ntnu_tput_all_Throughput dataset1.csv"
+  ],
+  "combined_labeled_raw_rows": 222996,
+  "duplicate_key_rows_removed": 111690,
+  "unlabeled_rows_removed": 42985,
+  "final_labeled_rows": 180011,
+  "features": [
+    "timestamp",
+    "link",
+    "packet_loss",
+    "jitter",
+    "outflow_Router",
+    "inflow_Router",
+    "resolve",
+    "avalability",
+    "ttl",
+    "probe_duration",
+    "rtt",
+    "LABEL",
+    "degradation",
+    "datetime",
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "hour_sin",
+    "hour_cos",
+    "avalability_constant"
+  ],
+  "severity_label_counts": {
+    "0": 166597,
+    "1": 12985,
+    "2": 429
+  },
+  "binary_degradation_counts": {
+    "0": 166597,
+    "1": 13414
+  },
+  "invalid_value_counts": {
+    "packet_loss": 0,
+    "jitter": 0,
+    "outflow_Router": 0,
+    "inflow_Router": 0,
+    "resolve": 0,
+    "ttl": 0,
+    "probe_duration": 0,
+    "rtt": 0,
+    "availability_outside_0_1": 0
+  },
+  "missing_after_cleaning": {},
+  "note": "Rows without LABEL are excluded from supervised training; model pipeline should still use median imputation for future/inference data. Throughput datasets are kept separate because they have no LABEL and no timestamp/link key for a safe row-level merge.",
+  "model_features_after_encoding": 26,
+  "numeric_features": [
+    "packet_loss",
+    "jitter",
+    "outflow_Router",
+    "inflow_Router",
+    "resolve",
+    "ttl",
+    "probe_duration",
+    "rtt",
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "hour_sin",
+    "hour_cos"
+  ],
+  "categorical_features": [
+    "link"
+  ],
+  "split_ranges": {
+    "train": [
+      "2025-06-25 13:28:00",
+      "2025-06-27 19:48:45"
+    ],
+    "validation": [
+      "2025-06-27 19:48:45",
+      "2025-07-02 01:52:00"
+    ],
+    "test": [
+      "2025-07-02 01:52:00",
+      "2025-07-02 14:13:30"
+    ]
+  }
+}
